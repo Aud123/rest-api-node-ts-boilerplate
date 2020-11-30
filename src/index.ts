@@ -4,10 +4,10 @@ import './config/db';
 
 const PORT = CONFIG.PORT;
 
-app.listen(PORT, err => {
+app.listen(PORT, () => {
+  console.log("server is running on port :" + PORT);
+}).on('error', function (err) {
   if (err) {
     return console.log(err);
   }
-
-  console.log(`Server is listening on ${PORT}`);
 });
